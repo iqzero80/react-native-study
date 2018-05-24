@@ -13,66 +13,73 @@ import {
   Button
 } from 'react-native';
 import moment from 'moment';
-
-let randomHex = () => {
-  let letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++ ) {
-      color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
+import Pallete from './Pallete.js';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {time: new Date(), format: "A hh:mm:ss"};
+    this.state = {
+      time: new Date(),
+      format: "A hh:mm:ss",
+      modalVisible: false,
+      color: '#FFFFFF'
+    };
 
     setInterval(() => {
       this.setState({
         time: new Date()
       })
     }, 1000);
-  }
-  change24 = () => {
+  };
+  modalOpen = () => {
     this.setState({
-      format: 'HH:mm:ss'
+      modalVisible: true
     });
-  }
-  change12 = () => {
+  };
+  modalClose = () => {
     this.setState({
-      format: 'A hh:mm:ss'
+      modalVisible: false
     });
-  }
-  changeColor = () => {
+  };
+  changeColor = (color) => {
     this.setState({
-      fondColor: randomHex(),
-      backgroundColor: randomHex()
+      backgroundColor: color,
+      modalVisible: false
     });
-  }
+  };
+  changeTime = () => {
+    if (this.state.format == 'A hh:mm:ss') {
+      this.setState({
+        format: 'HH:mm:ss'
+      });
+    } else {
+      this.setState({
+        format: 'A hh:mm:ss'
+      });
+    }
+  };
+  
   render() {
     const date = this.state.time;
     const formatDate = moment(date).format(this.state.format);
     return (
       <View style={[styles.container, {backgroundColor: this.state.backgroundColor}]}>
-        <View style={styles.body}>
-          <Text style={[styles.time, {color: this.state.fondColor}]}>
-            {formatDate}
-          </Text>
-        </View>
-        <View style={styles.footer}>
-          <Button style={styles.button}
-            title="24"
-            onPress={() => this.change24()}
-          />
+        <Pallete modalVisible={this.state.modalVisible} close={this.modalClose} color={this.changeColor} />
+
+        <View style={styles.header}>
           <Button style={styles.button}
             title="color"
-            onPress={() => this.changeColor()}
+            onPress={() => this.modalOpen()}
           />
           <Button style={styles.button}
-            title="12"
-            onPress={() => this.change12()}
+            title="24 <> 12"
+            onPress={() => this.changeTime()}
           />
+        </View>
+        <View style={styles.body}>
+          <Text style={styles.time}>
+            {formatDate}
+          </Text>
         </View>
       </View>
     );
@@ -88,7 +95,7 @@ const styles = StyleSheet.create({
     flex: 6,
     justifyContent: 'center'
   },
-  footer: {
+  header: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
