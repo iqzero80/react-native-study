@@ -21,53 +21,35 @@ class Pallete extends Component {
                     }}>
                     <View style={styles.mainbox}>
                         <View style={{flexDirection: 'row'}}>
-                            <TouchableHighlight onPress={() => {
-                                this.props.color('#ffcdd2');
-                            }}>
+                            <TouchableHighlight onPress={() => {this.props.color('#ffcdd2');}}>
                                 <View style={[styles.colorbox, {backgroundColor: '#ffcdd2'}]}></View>
                             </TouchableHighlight>
-                            <TouchableHighlight onPress={() => {
-                                this.props.color('#f8bbd0');
-                            }}>
+                            <TouchableHighlight onPress={() => {this.props.color('#f8bbd0');}}>
                                 <View style={[styles.colorbox, {backgroundColor: '#f8bbd0'}]}></View>
                             </TouchableHighlight>
-                            <TouchableHighlight onPress={() => {
-                                this.props.color('#e1bee7');
-                            }}>
+                            <TouchableHighlight onPress={() => {this.props.color('#e1bee7');}}>
                                 <View style={[styles.colorbox, {backgroundColor: '#e1bee7'}]}></View>
                             </TouchableHighlight>
                         </View>
                         <View style={{flexDirection: 'row'}}>
-                            <TouchableHighlight onPress={() => {
-                                this.props.color('#d1c4e9');
-                            }}>
+                            <TouchableHighlight onPress={() => {this.props.color('#d1c4e9');}}>
                                 <View style={[styles.colorbox, {backgroundColor: '#d1c4e9'}]}></View>
                             </TouchableHighlight>
-                            <TouchableHighlight onPress={() => {
-                                this.props.color('#c5cae9');
-                            }}>
+                            <TouchableHighlight onPress={() => {this.props.color('#c5cae9');}}>
                                 <View style={[styles.colorbox, {backgroundColor: '#c5cae9'}]}></View>
                             </TouchableHighlight>
-                            <TouchableHighlight onPress={() => {
-                                this.props.color('#bbdefb');
-                            }}>
+                            <TouchableHighlight onPress={() => {this.props.color('#bbdefb');}}>
                                 <View style={[styles.colorbox, {backgroundColor: '#bbdefb'}]}></View>
                             </TouchableHighlight>
                         </View>
                         <View style={{flexDirection: 'row'}}>
-                            <TouchableHighlight onPress={() => {
-                                this.props.color('#b3e5fc');
-                            }}>
+                            <TouchableHighlight onPress={() => {this.props.color('#b3e5fc');}}>
                                 <View style={[styles.colorbox, {backgroundColor: '#b3e5fc'}]}></View>
                             </TouchableHighlight>
-                            <TouchableHighlight onPress={() => {
-                                this.props.color('#b2ebf2');
-                            }}>
+                            <TouchableHighlight onPress={() => {this.props.color('#b2ebf2');}}>
                                 <View style={[styles.colorbox, {backgroundColor: '#b2ebf2'}]}></View>
                             </TouchableHighlight>
-                            <TouchableHighlight onPress={() => {
-                                this.props.color('#b2dfdb');
-                            }}>
+                            <TouchableHighlight onPress={() => {this.props.color('#b2dfdb');}}>
                                 <View style={[styles.colorbox, {backgroundColor: '#b2dfdb'}]}></View>
                             </TouchableHighlight>
                         </View>

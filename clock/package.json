@@ -9,9 +9,11 @@
   "dependencies": {
     "moment": "^2.22.1",
     "moment-timezone": "^0.5.17",
+    "npm": "^6.1.0",
     "react": "16.3.1",
     "react-moment": "^0.7.0",
-    "react-native": "0.55.4"
+    "react-native": "0.55.4",
+    "react-navigation": "^2.0.4"
   },
   "devDependencies": {
     "babel-jest": "22.4.3",
