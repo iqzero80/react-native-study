@@ -5,11 +5,22 @@ import {
     View,
     Text,
     Button,
-    TouchableHighlight
+    TouchableHighlight,
+    Animated, Easing
 } from 'react-native';
 
-class Pallete extends Component {
+export default class Pallete extends Component {
+    componentWillMount() {
+        this.animatedValue = new Animated.Value(0);
+    };
+    componentDidMount() {
+        Animated.timing(this.animatedValue, {
+            toValue: 50,
+            duration: 2000
+        }).start();
+    };
     render() {
+        const animatedStyle = { marginLeft: this.animatedValue };
         return (
             <Modal
                 transparent={true}
@@ -19,7 +30,7 @@ class Pallete extends Component {
                 <TouchableHighlight style={{flex: 1}} onPress={() => {
                         this.props.close();
                     }}>
-                    <View style={styles.mainbox}>
+                    <Animated.View style={[styles.mainbox, animatedStyle]}>
                         <View style={{flexDirection: 'row'}}>
                             <TouchableHighlight onPress={() => {this.props.color('#ffcdd2');}}>
                                 <View style={[styles.colorbox, {backgroundColor: '#ffcdd2'}]}></View>
@@ -53,7 +64,7 @@ class Pallete extends Component {
                                 <View style={[styles.colorbox, {backgroundColor: '#b2dfdb'}]}></View>
                             </TouchableHighlight>
                         </View>
-                    </View>
+                    </Animated.View>
                 </TouchableHighlight>
             </Modal>
         )
@@ -62,8 +73,8 @@ class Pallete extends Component {
 
 const styles = StyleSheet.create({
     mainbox: {
-        marginTop: 60,
-        marginLeft: 30,
+        marginTop: 120,
+        // marginLeft: 50,
         width: 122,
         height: 122,
         borderWidth: 1
@@ -73,5 +84,3 @@ const styles = StyleSheet.create({
         height: 40
     }
 });
-
-export default Pallete;
