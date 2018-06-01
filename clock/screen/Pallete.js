@@ -74,7 +74,6 @@ export default class Pallete extends Component {
 const styles = StyleSheet.create({
     mainbox: {
         marginTop: 120,
-        // marginLeft: 50,
         width: 122,
         height: 122,
         borderWidth: 1

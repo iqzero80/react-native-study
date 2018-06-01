@@ -21,7 +21,9 @@ export default class Home extends Component {
                 <Text style={styles.title}>시계 만들어 보자</Text>
                 <Button
                     onPress={() => navigate('Clock')}
-                    title='시계'
+                    icon={{name: 'alarm'}}
+                    backgroundColor='#fc5830'
+                    title='똥꼬시계'
                 />
             </View>
         )
@@ -31,7 +33,6 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
     title: {
         fontSize: 15,
-        // textAlign: 'center',
         margin: 15
     }
 });

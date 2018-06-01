@@ -66,10 +66,12 @@ export default class Clock extends Component {
                 <Button
                     title="color"
                     onPress={() => this.modalOpen()}
+                    backgroundColor='#8cc052'
                 />
                 <Button
                     title="24 <> 12"
                     onPress={() => this.changeTime()}
+                    backgroundColor='#2b98f0'
                 />
             </View>
             <View style={styles.body}>
